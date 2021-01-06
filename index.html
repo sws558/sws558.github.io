@@ -152,6 +152,134 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/06/my-first-blog/">my-first-blog</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/06/my-first-blog/" class="archive-article-date">
+  	<time datetime="2021-01-06T03:24:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##<strong>一.<a target="_blank" rel="noopener" href="https://github.com/">注册GitHub账号</a></strong></p>
+<ol>
+<li><p><em>在自己的GitHub上创建一个repository</em></p>
+<p><img src="https://img-blog.csdn.net/20180426145220334?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTM0NTM4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="new repository"></p>
+</li>
+</ol>
+<ol start="2">
+<li><p><em>Repository name 必须是 GitHub用户名.github.io</em></p>
+<p><img src="https://img-blog.csdn.net/20180426150344105?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTM0NTM4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<hr>
+</li>
+</ol>
+<p>##<strong>二.<a target="_blank" rel="noopener" href="https://github.com/Hunter1023/learn_Git/wiki/Git%E7%9A%84%E5%AE%89%E8%A3%85">安装Git</a></strong></p>
+<p>##<strong>三.<a target="_blank" rel="noopener" href="https://nodejs.org/en/">安装Node.js</a></strong></p>
+<p>##<strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39345384/article/details/80098228#t2">四.安装Hexo</a></strong></p>
+<p>##<strong>五.配置SSH key</strong></p>
+<ol>
+<li><p>原因：因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
+</li>
+<li><p>方法：在git bash 上输入ssh-keygen -t rsa -C “邮件地址”，然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到<code>.ssh\id_rsa.pub</code>文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<img src="http://image.liuxianan.com/201608/20160818_143914_495_9084.png" alt="结果"></p>
+</li>
+<li><p>测试是否成功</p>
+<p>在git bash中输入$ ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#109;</a>，如果提示<code>Are you sure you want to continue connecting (yes/no)?</code>，输入yes，然后会看到：</p>
+<blockquote>
+<p>Hi sws558! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+<p>看到这个信息说明SSH已配置成功！ </p>
+</li>
+</ol>
+<p>​        接着配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;liuxianan&quot;&#x2F;&#x2F; 你的github用户名，非昵称</span><br><span class="line">$ git config --global user.email  &quot;xxx@qq.com&quot;&#x2F;&#x2F; 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
+<p>##<strong>六.本地搭建博客</strong></p>
+<p>在电脑上找个合适位置或者新建文件夹，用来存放之后创建的博客。<br>打开<code>git bash</code>,在git  bash 下找到新建文件夹的路径。</p>
+<ol>
+<li><p>初始化博客框架：在git bash中输入**<em>hexo init**</em>会自动生成如下文件</p>
+<p><img src="https://img-blog.csdn.net/20180426192733995?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTM0NTM4NA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="效果"></p>
+<p>2.生成静态文件并预览，分别在git bash中输入</p>
+<p><strong><em>hexo g</em></strong> </p>
+<p><strong><em>hexo s</em></strong></p>
+<p>打开浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 即可看到内容</p>
+</li>
+</ol>
+<p>##<strong>六.修改主题</strong></p>
+<ol>
+<li><p>下载主题，首先在git bash中转到hexo文档路径下，在git bash中输入</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>修改<code>_config.yml</code>中的<code>theme: landscape</code>改为<code>theme: yilia</code>，然后重新执行<code>hexo g</code>来重新生成。</p>
+<p>如果出现一些莫名其妙的问题，可以先执行<code>hexo clean</code>来清理一下public的内容，然后再来重新生成和发布。</p>
+</li>
+</ol>
+<p>##**七.将网站部署到GitHub上 **</p>
+<ol>
+<li><p>安装hexo-deployer-git</p>
+<p>在git bash 中输入npm install hexo-deployer-git –save</p>
+</li>
+<li><p>修改hexo文档中的_confi.yml文件中deploy的配置，如下:</p>
+</li>
+</ol>
+<p>deploy: </p>
+<p> type: git  </p>
+<p>repo: <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#109;</a>:your_user_name/your_user_name.github.io.git </p>
+<p> branch: master</p>
+<p><img src="C:\Users\DELL\Desktop\u=3097764032,1757094043&fm=26&gp=0.jpg" alt="test"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/06/my-first-blog/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
